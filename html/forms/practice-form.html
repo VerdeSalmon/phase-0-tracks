@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Page</title>
+	 <meta charset="UTF-8">
+</head>
+<body>
+<h1>Movie Time</h1>
+
+<form name="movies" action="success.html" method="Post">
+
+<div>
+<label>What movie genre do you prefer?</label>
+<select name="genre">
+	<option value=1>Drama</option>
+	<option value=2>Action</option>
+	<option value=3>Terror</option>
+	<option value=5>Comedy</option>
+</select>
+</div>
+
+<br>
+
+<div>
+	<label>Type the name of your favorite movie</label>
+	<input name="movieName" type="text" id="movieN">
+</div>
+
+<br>
+
+<div>
+<fieldset>
+	<legend>How do you rate your movie</legend>
+<p>
+	<input type="radio" name="movierate" id="mrate5" value=5>
+	<label for="mrate5">5</label>
+</p>
+<p>
+	<input type="radio" name="movierate" value=4 id="mrate4">
+	<label for="mrate4" >4</label>
+</p>
+<p>
+	<input type="radio" name="movierate" value=3 id="mrate3">
+	<label for="mrate3">3</label>
+</p>
+<p>
+	<input type="radio" name="movierate" value=2 id="mrate2">
+	<label for="mrate2">2</label>
+</p>
+<p>
+	<input type="radio" name="movierate" value=1 id="mrate1">
+	<label for="mrate1">1</label>
+</p>
+</fieldset>
+</div>
+
+<br>
+
+<div>
+<input type="checkbox" name="movie" value="yes">
+This is your final answer!!! (check to confirm)
+</div>
+
+<br>
+
+<div>
+	<textarea name="comments" cols="100" rows="5">Enter additional comments...</textarea>
+</div>
+
+<br>
+
+<button type="submit">Save your movie selection</button>
+
+</form>
+</body>
+</html>
