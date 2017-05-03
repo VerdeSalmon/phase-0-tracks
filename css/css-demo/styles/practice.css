@@ -1,0 +1,39 @@
+#contact-info{ 
+	font-size: .8em;
+}  
+
+/*Repeat code with class="practice", to practice the cascading concept*/
+.practice{ 
+	color: grey !important;
+}
+
+.job{ 
+	background-color: #e9e5dc;       
+	border-radius: 6px;       
+	padding-bottom: 2%;
+}  
+
+.practice{ 
+	font-size: .8em;
+	color: red;
+}
+
+/*Parenting with > and pseudoselector with ::first-letter*/
+ul>li::first-letter {
+	color: blue;
+}
+
+/*General sibling combinator selector*/
+p ~ p {
+	color: green;
+}
+
+/*Adjacent sibling combinator selector. This doesn't show in the browser because .practice has more weight, even without the !important*/
+h3 + ul {
+	color: green;
+}
+
+/*Adjacent sibling combinator selector*/
+h2 + p {
+	font-style: italic;
+}
