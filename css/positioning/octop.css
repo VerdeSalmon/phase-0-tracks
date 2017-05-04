@@ -1,0 +1,22 @@
+.box{
+	position: relative;
+  	margin: 2% 40%;
+}
+
+
+#carl{
+	position: absolute;
+	top: 52px;
+	left: 20px;
+	z-index: -1;
+}
+
+#hat{
+	position: absolute;
+}
+
+#glasses{
+	position: absolute;
+	top: 150px;
+	left: 62px;
+}
