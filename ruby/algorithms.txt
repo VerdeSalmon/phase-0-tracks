@@ -1,0 +1,48 @@
+#How to use an elevator algorithm
+
+*Start declaring the destination floor number(variable and value) and the current floor position (variable and value).
+	-if destination floor is equal or bigger than the current floor position: 
+		-select and push Up button.
+	-else: select and push Down button.
+
+*Until(loop) the doors opens(boolean): 
+	-Keep stand in front of the elevator doors.
+	-If the doors opens: 
+		-Get inside the elevator.
+
+*If inside the elevator:
+	-search and move to the wall that has a set of numbered buttons(array)
+ 		-For each button in the set os numbered buttons:
+			-if the destination floor number is equal to one of the buttons in the 				numbered buttons set:
+				-select it and push it.
+				-While the updated current floor number is not equal to the 					destination number:
+					-Keep inside the elevator
+				-If the updated current floor number is equal to the 					destination number: 
+					-If the doors opens:
+					 	-get out of the elevator.
+					-else: ask for help to open the elevator doors.
+
+			else: get off the elevator and ask for a valid destination floor 				number (input variable).
+
+			
+	
+
+		
+
+
+
+
+
+Indented instructions if they are to be repeated or if they only happen under certain conditions
+Counting up or down
+Doing some steps over and over while something is true, or until some condition is met (it is midnight, or the entire floor is mopped)
+Using words like "if" and "otherwise" to show different possible outcomes depending on the situation
+Following the same procedure for each item in a list of items
+
+
+- For each student in a list of students:
+    - Until you hear a response, or until you have attempted three times:
+        - Call out the student's name.
+        - Wait three seconds for a response.
+    - If no response was heard:
+        - Mark the student as absent.
