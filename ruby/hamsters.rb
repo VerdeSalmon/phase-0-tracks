@@ -17,3 +17,6 @@ hamsterestage == nil ? nil : hamsterestage
 
 
 puts "The Hamster's name is #{hamstername}!,\nthe volume is #{hamstervol},\nthe fur color is a beautiful #{hamstercolor},\nthe estimated age is #{hamsterestage}\nand the hamster is #{hamsteradopt} adopting."
+
+
+#pair with @sanjaynelson
