@@ -8,7 +8,7 @@ puts "What's the hamster's fur color?"
 hamstercolor = gets.chomp
 
 puts "Is the hamster worth adopting? (y or n)"
-hamsteradopt = gets.chomp #It's a new buil in .to_b that works in 2.4 ruby version
+hamsteradopt = gets.chomp 
 hamsteradopt == "y"?  hamsteradopt ="worth" : hamsteradopt ="not worth"
 
 puts "What's the hamster's estimated age?"
