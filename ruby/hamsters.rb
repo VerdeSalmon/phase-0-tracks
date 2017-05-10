@@ -13,7 +13,7 @@ hamsteradopt == "y"?  hamsteradopt ="worth" : hamsteradopt ="not worth"
 
 puts "What's the hamster's estimated age?"
 hamsterestage = gets.chomp.to_i
-hamsterestage == nil ? nil : hamsterestage
+hamsterestage ||= nil
 
 
 puts "The Hamster's name is #{hamstername}!,\nthe volume is #{hamstervol},\nthe fur color is a beautiful #{hamstercolor},\nthe estimated age is #{hamsterestage}\nand the hamster is #{hamsteradopt} adopting."
