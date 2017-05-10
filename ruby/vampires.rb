@@ -1,15 +1,10 @@
 puts "What is your name?"
 name = gets.chomp
-name == "Drake Cula" && name == "Tu Fang"? name = true : name = false
-name2 = name
+name == "Drake Cula" || name == "Tu Fang"? name = true : name = false
 
-#puts "What year were you born?" 
-#b_year = gets.chomp.to_i
-
-puts "What is your age?"
+puts "What is your age? What year were you born?"
 age = gets.chomp.to_i
-age < 100? age =true : age =false
-age2 = age
+0 < age && age < 100? age =true : age =false
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)" 
 garlic = gets.chomp
@@ -20,31 +15,18 @@ h_insur = gets.chomp
 h_insur == "y"? h_insur =true : h_insur =false
 
 
-#test2 =[name, age, garlic, h_insur]
 
+if !name && age && (garlic||h_insur); puts "Probably not a vampire."; #age true, garlic good or insurance good
+	
+elsif !age && garlic || !age && h_insur; puts "Probably a vampire.";#age false , garlic no or insurance no
+	
+elsif !age && !garlic && !h_insur; puts "Almost certainly a vampire.";#age false, garlic no and insurance no
+	
+elsif name; puts "Definitely a vampire.";
 
+else; "Results inconclusive."; end
 
-
-age2 && (garlic||h_insur)? (puts "Probably not a vampire."):(puts "Probably a vampire.")
-
-!age2 && !garlic && !h_insur ? "Almost certainly a vampire." : false
-
-puts "Definitely a vampire." if name2
-
-puts "Results inconclusive." if  age2 && garlic && h_insur && !name2 
-
-
-#case test2
-#when age < 100 && (garlic||h_insur)
-	#puts "Probably not a vampire."
-#when age >100 && (garlic||h_insur)
-	#puts "Probably a vampire."
-#when age >100 && garlic && h_insur
-	#puts "Almost certainly a vampire."
-#when name == "Drake Cula" || "Tu Fang"
-	#puts "Almost certainly a vampire."
-#end
-
+	
 
 =begin
 If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
@@ -53,3 +35,7 @@ If the employee got their age wrong, hates garlic bread, and doesn’t want insu
 Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
 Otherwise, print “Results inconclusive.”
 =end
+
+
+
+
