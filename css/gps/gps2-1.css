@@ -1,0 +1,92 @@
+body {
+  width: 100%;
+  background-image: url("http://www.shunvmall.com/data/out/18/47504153-background.png");
+
+}
+
+header {
+  margin-left: 8em;
+  margin-right: 8em;
+  margin-top: 8px;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+  background: rgba(179, 179, 179, 0.2);
+  border-radius: 10px;
+}
+
+section {
+  padding: 10px;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  height: 70em;
+}
+
+h1,h2 {
+  font-family: Georgia, serif;
+  color:  #00b359;
+}
+
+.column-1 {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin-left: 8em;
+}
+
+.column-2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin-left: 2em;
+}
+
+footer {
+  margin-left: 7em;
+  margin-right: 7em;
+  margin-top: 8px;
+  padding: 5px;
+  text-align: center;
+  font-size: 8px;
+}
+
+
+@media screen and (max-width: 799px) and (min-width: 300px) {
+  .column-2 {
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 929px) and (min-width: 800px) {
+  .column-2 {
+    margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 1079px) and (min-width: 930px) {
+  .column-2 {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  header{
+    font-size: 22px;
+  }
+
+  footer{
+    font-size: 16px;
+  }
+  section {
+    height: 62em;
+  }
+
+  .column-1{
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+
+  .column-2 {
+    margin-left: 7%;
+  }
+}

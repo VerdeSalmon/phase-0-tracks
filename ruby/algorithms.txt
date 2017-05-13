@@ -12,37 +12,43 @@
 
 *If inside the elevator:
 	-search and move to the wall that has a set of numbered buttons(array)
- 		-For each button in the set os numbered buttons:
-			-if the destination floor number is equal to one of the buttons in the 				numbered buttons set:
+ 		-For each button in the set of numbered buttons:
+			-if the destination floor number is equal to one of the buttons in the numbered buttons set:
 				-select it and push it.
-				-While the updated current floor number is not equal to the 					destination number:
+				-While the updated current floor number is not equal to the destination number:
 					-Keep inside the elevator
-				-If the updated current floor number is equal to the 					destination number: 
+				-If the updated current floor number is equal to the destination number: 
 					-If the doors opens:
 					 	-get out of the elevator.
 					-else: ask for help to open the elevator doors.
 
-			else: get off the elevator and ask for a valid destination floor 				number (input variable).
+			else: get off the elevator and ask for a valid destination floor number (input variable).
+
+
 
 			
+#How to make coffee algorithm
+
+*Define the type of coffee you want to make:
+	-if without milk(array)
+		-Do you prefer? 
+			-expresso or americano(hashes)
+	- if with milk(arrey)
+		-cappuccino, latte, mocha, macchiato(hashes) 
+
+*Define if you want to sweeten with:
+	-nothing, sugar, stevia, other.
+		-if other
+			-which one?
+			- Add to the list
+			-How many tea spoons do you want.
+				-save that answer
+
+*Define how many cups of coffee do you want to make:
+	-Multiply it for the type of coffee and number of tea spoons of sweetener.
+
+*Pick a cup:
+	-Mix all the ingridients in it.
+	
 	
 
-		
-
-
-
-
-
-Indented instructions if they are to be repeated or if they only happen under certain conditions
-Counting up or down
-Doing some steps over and over while something is true, or until some condition is met (it is midnight, or the entire floor is mopped)
-Using words like "if" and "otherwise" to show different possible outcomes depending on the situation
-Following the same procedure for each item in a list of items
-
-
-- For each student in a list of students:
-    - Until you hear a response, or until you have attempted three times:
-        - Call out the student's name.
-        - Wait three seconds for a response.
-    - If no response was heard:
-        - Mark the student as absent.
