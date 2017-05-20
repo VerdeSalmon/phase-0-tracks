@@ -31,4 +31,7 @@ def alias_maker(name_swaped)
 end
 
 
+
+puts "Type a name to get an alias"
+name = gets.chomp
 p alias_maker(name_swap("Felicia Torres")) #Vussit Gimodoe
