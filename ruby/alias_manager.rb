@@ -4,7 +4,7 @@
 def name_swap(name)
 
 name_split = name.split(" ")
-name_swap = name_split.shuffle
+name_swap = name_split.reverse
 name_join = name_swap.join(" ")
 
 end
@@ -31,7 +31,16 @@ def alias_maker(name_swaped)
 end
 
 
+i = ""
+until i == "quit"
+	puts "Type a name to get an alias"
+	name = gets.chomp
+	if name != "quit"
+		p alias_maker(name_swap(name)) #Vussit Gimodoe
+	end
+	i = name
+end
 
-puts "Type a name to get an alias"
-name = gets.chomp
-p alias_maker(name_swap("Felicia Torres")) #Vussit Gimodoe
+
+
+#p alias_maker(name_swap(name)) #Vussit Gimodoe
