@@ -5,20 +5,63 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
+
+zombie_apocalypse_supplies.each {|supply| print "#{supply}*"}
+
 # ----
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
+
+zombie_apocalypse_supplies.each_index do |supply_one|
+	(supply_one + 1...zombie_apocalypse_supplies.length).each do |supply_two|
+		if zombie_apocalypse_supplies[supply_one] > zombie_apocalypse_supplies[supply_two]
+		zombie_apocalypse_supplies[supply_one], zombie_apocalypse_supplies[supply_two] = zombie_apocalypse_supplies[supply_two], zombie_apocalypse_supplies[supply_one]
+		end
+	end
+	if zombie_apocalypse_supplies.last == "water jug"
+		p zombie_apocalypse_supplies
+	end
+end
+
 # ----
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
+
+def supply_finder(supplies)
+
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
+                              "shotgun", "compass", "CB radio", "batteries"]
+
+	zombie_apocalypse_supplies.each do |supply|
+ 		if supply == supplies
+ 			p true
+ 		else
+ 			p false
+ 		end
+ 	end
+end
+
+supply_finder("banano")
+
 # ----
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+
+
+    supplies = zombie_apocalypse_supplies.sort
+	supplies.each do |supply|
+ 		if supply <= supply[5]
+ 			puts supply
+ 		else
+ 			zombie_apocalypse_supplies.delete(supply)
+ 		end
+ 	end
+
 # ----
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -28,6 +71,9 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+
+two_survivors_supplies = zombie_apocalypse_supplies | other_survivor_supplies
+
 # ----
 
 # Hash Drills
