@@ -26,11 +26,11 @@ def alias_maker(name_swaped)
 		#Condition to identify vowels in the array of characters
 		if vowels.include? letter
 			#Change the vowels found in the character array for the next vowel in the vowels array
-			vowels.rotate(1)[vowels.index(letter)]
+			vowels.rotate[vowels.index(letter)]
 		##Condition to identify consonants in the array of characters
 		elsif consonants.include? letter
 			#Change the consonants found in the character array for the next consonant in the consonants array
-			consonants.rotate(1)[consonants.index(letter)]	
+			consonants.rotate[consonants.index(letter)]	
 		else 
 			#Default outcome for characters in the character array, that aren't vowels or cosonants
 			letter
