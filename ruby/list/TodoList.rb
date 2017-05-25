@@ -24,5 +24,3 @@ class TodoList
 
 end
 
-
-#list = TodoList.new(["do the dishes", "mow the lawn"])
