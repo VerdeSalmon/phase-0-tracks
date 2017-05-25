@@ -1,4 +1,4 @@
-require_relative 'TodoList'
+require_relative 'todo_list'
 
 describe TodoList do
 
