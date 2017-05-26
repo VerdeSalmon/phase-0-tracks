@@ -1,3 +1,11 @@
+module Flight
+	#Don't use self keyword in a module as a mixin designed to add instance methods to a class
+	def take_off(altitude)
+		puts "Taking off and ascending until reaching #{altitude} ..."
+	end
+
+end
+
 class Bird
 	include Flight
 end
@@ -7,16 +15,6 @@ end
 class Plane
 	include Flight
 end
-
-
-module Flight
-	#Don't use self keyword in a module as a mixin designed to add instance methods to a class
-	def take_off(altitude)
-		puts "Taking off and ascending until reaching #{altitude} ..."
-	end
-
-end
-
 
 
 bird = Bird.new
