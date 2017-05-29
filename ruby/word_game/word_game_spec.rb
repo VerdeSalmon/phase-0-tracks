@@ -15,25 +15,48 @@ describe WordGame do
   	end
 
   	it "split by characters, stores the new array in a variable, compare to arrays and store in a new array the equal elements in the same index" do
-  	players.string_to_guess("My uncle steve")
   	players.check_word("e")	
   	expect(@guess) == [["_ ", "_ ", "  ", "_ ", "_ ", "_ ", "_ ", "e", "  ", "_ ", "_ ", "e", "_ ", "e"]]
   	end
 
-  	it "print message for the user when the game is over" do
+
+ 	#it "register the progress of the guessing game" do
+ 	
+  	#end
+
+  	#it "print the feedback about the progress of the guessing game"
+
+  	#end
+
+
+  	it "checks if the game is over " do
+  	players.print_final_feedback
+  	@letters_to_guess = ("My uncle steve")
+  	@guess = ("My uncle steve")
+  	expect((@letters_to_guess.eql? @guess) || (@tries == @letters_to_guess.length)).to be true
+  	end
+
+  	it "checks if the game is over" do
+  	players.print_final_feedback
+  	@letters_to_guess = ("My uncle steve")
+  	@guess = ("d")
+  	expect((@letters_to_guess.eql? @guess) || (@tries == @letters_to_guess.length)).to be false
+  	end
+
+  	it "checks if the user win the game and print a final message" do
+  	players.print_final_feedback
   	players.string_to_guess("My uncle steve")
   	players.check_word("My uncle steve")
   	expect(@letters_to_guess.eql? @guess).to be true
   	end
 
-  	it "print message for the user when the game is over" do
-  	players.string_to_guess("My uncle steve")
-  	players.check_word("p")
+  	it "checks if the user win the game and print a final message" do
+  	players.print_final_feedback
+  	@letters_to_guess = ("My uncle steve")
+  	@guess = ("d")
   	expect(@letters_to_guess.eql? @guess).to be false
   	end
 
- 
 end
-
 
 
