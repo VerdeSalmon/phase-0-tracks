@@ -24,12 +24,19 @@ class WordGame
         puts "This is the Word Game!"
         @game_over
         @tries = 0
+        @guess = []
     end
 
 
     def string_to_guess(secret_string)
         @letters_to_guess = secret_string.downcase.chars
-        p @guess = ["_ " * @letters_to_guess.length]
+        
+        @letters_to_guess.each do |letter|
+            @guess << "_ " * letter.length
+        end
+
+        print @guess
+        puts " "   
     end
 
 
@@ -38,16 +45,11 @@ class WordGame
 
     	@guess_string = guess_string.downcase
         
-        @guess = []
-
-        @letters_to_guess.each do |letter| 
+         @letters_to_guess.each do |letter| 
             if @guess_string.include? letter
-                @guess << letter 
-            elsif letter == " "
-                @guess << "  "          
-            else 
-                @guess << "_ "
-            end
+                @guess.delete_at(@letters_to_guess.index(letter)) 
+                @guess.insert(@letters_to_guess.index(letter), letter)
+            end    
         end
         @guess
     end
@@ -84,9 +86,7 @@ end
 #
 #players.string_to_guess(get_secret_string("Enter a secret word or phrase: "))
 #
-
 #guessed_letters = []
-
 #until players.game_over == true
 #   
     #puts "Enter a letter, word or phrase as attempt to guess the secret string"
