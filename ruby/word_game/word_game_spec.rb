@@ -14,19 +14,17 @@ describe WordGame do
     expect(@letters_to_guess) == [["m", "y", " ", "u", "n", "c", "l", "e", " ", "S", "t", "e", "v", "e"]]
   	end
 
-  	it "split by characters, stores the new array in a variable, compare to arrays and store in a new array the equal elements in the same index" do
-  	players.check_word("e")	
+  	it "lowercase the guess string and store it in a variable, compare the letters to guess with guess string and store in a new array the equal elements, in the same index" do
+  	players.string_to_guess("My uncle steve")
+  	players.check_word("E")	
   	expect(@guess) == [["_ ", "_ ", "  ", "_ ", "_ ", "_ ", "_ ", "e", "  ", "_ ", "_ ", "e", "_ ", "e"]]
   	end
 
 
- 	#it "register the progress of the guessing game" do
- 	
-  	#end
-
-  	#it "print the feedback about the progress of the guessing game"
-
-  	#end
+  	it "print the feedback about the progress of the guessing game" do
+  	@guess = ["_ ", "_ ", "  ", "_ ", "_ ", "_ ", "_ ", "e", "  ", "_ ", "_ ", "e", "_ ", "e"]
+  	expect(@guess) == [["_ ", "_ ", "  ", "_ ", "_ ", "_ ", "_ ", "e", "  ", "_ ", "_ ", "e", "_ ", "e"]]
+  	end
 
 
   	it "checks if the game is over " do
