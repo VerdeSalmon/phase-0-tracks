@@ -1,6 +1,6 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: @baska].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
@@ -100,7 +100,17 @@ end
 # Reflection Section
 
 #What are the differences between the two different hash syntaxes shown in the state_data file?
+# One has strings as keys and the other has symbols.
+
 #What does require_relative do? How is it different from require?
+# It is to indicate where to look for files, specificly to indicate to look files in the same folder.
+# requiere looks in all the paths specified in the $LOAD_PATH array.
+
 #What are some ways to iterate through a hash?
+# Using loops such as .each or for, iterating trhough their keys or values, or the pair.
+
 #When refactoring virus_effects, what stood out to you about the variables, if anything?
+# even if the instance method is private, the instance variables has the same access like with public methods. 
+
 #What concept did you most solidify in this challenge?
+# require_relative and types of variables.
