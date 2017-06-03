@@ -4,6 +4,7 @@
 // and returns the longest word or phrase in the array. Iterate through an array
 // Add driver code that tests your function on a few arrays.
 
+
 function longestStringIdentifier(stringsArray){
 	var longestString = "";
 	for (var i = 0; i < stringsArray.length; i++){
@@ -25,6 +26,7 @@ console.log(longestStringIdentifier(weekends));
 
 console.log("----------------------")
 
+
 // Release 1: Find a Key-Value Match
 
 // write a function that takes two objects 
@@ -34,6 +36,7 @@ console.log("----------------------")
 // yourFunction({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); #  true
 
 // Add some driver code that tests both outcomes of your function.
+
 
 function shareChecker(hash1, hash2){
 	
@@ -79,6 +82,31 @@ console.log("----------------------")
 // generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
 
+function stringsArrayMaker(number){
+
+	var randomStringArray = [];
+	var string = "";
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	for (var x = 0; x < number; x++){
+		for( var i=0; i < 10; i++ ){
+        	(string += alphabet.charAt(Math.floor(Math.random() * alphabet.length)));  
+		}
+		randomStringArray.push(string);
+	}
+
+	return randomStringArray;
+}
+
+
+	
+var newStringArray = [] ;
+
+for (var i = 0; i <= 10; i++){
+	newStringArray = stringsArrayMaker(3);
+	console.log(newStringArray);
+	console.log(longestStringIdentifier(newStringArray));
+	console.log("----------------------")
+}
 
 
 
