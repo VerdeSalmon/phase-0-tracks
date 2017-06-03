@@ -4,11 +4,11 @@
 // and returns the longest word or phrase in the array. Iterate through an array
 // Add driver code that tests your function on a few arrays.
 
-function longestStringIdentifier(strings_array){
+function longestStringIdentifier(stringsArray){
 	var longestString = "";
-	for (var i = 0; i < strings_array.length; i++){
-		if (strings_array[i].length > longestString.length){
-			longestString = strings_array[i];
+	for (var i = 0; i < stringsArray.length; i++){
+		if (stringsArray[i].length > longestString.length){
+			longestString = stringsArray[i];
 		}
 	}
 	return longestString;
@@ -23,7 +23,7 @@ console.log(longestStringIdentifier(colors));
 
 console.log(longestStringIdentifier(weekends));
 
-
+console.log("----------------------")
 
 // Release 1: Find a Key-Value Match
 
@@ -38,7 +38,6 @@ console.log(longestStringIdentifier(weekends));
 
 
 
-
 // Release 2: Generate Random Test Data
 
 //Write a function that takes an integer for length, 
@@ -47,3 +46,18 @@ console.log(longestStringIdentifier(weekends));
 // the words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. 
 // Add driver code that does the following 10 times: 
 // generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
