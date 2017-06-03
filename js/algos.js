@@ -35,7 +35,38 @@ console.log("----------------------")
 
 // Add some driver code that tests both outcomes of your function.
 
+function shareChecker(hash1, hash2){
+	
+	for (var i in hash1){
+		for (var x in hash2){
+			if ((i == x)&&(hash1[i] == hash2[x])){
+				var sharedKeyValue = true;
+			}else{
+				sharedKeyValue = false
+			};
+		};
+	};
+	return sharedKeyValue;
+}
 
+
+var house = {rooms: 5, location: "Main city"};
+
+var office = {rooms: 15, location: "Main city"}
+
+console.log(shareChecker(house, office));
+
+//------------
+
+var garden = {plants:  300, trees: 2};
+
+var forest = {animals: 300, trees: 1 }
+
+console.log(shareChecker(garden, forest));
+
+//--------------
+
+console.log("----------------------")
 
 
 // Release 2: Generate Random Test Data
