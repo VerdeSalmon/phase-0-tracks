@@ -1,22 +1,32 @@
 puts "What's the hamster's name?"
-hamstername = gets.chomp.capitalize
+hamster_name = gets.chomp.capitalize
 
 puts "What's the volume of hamster between 1 & 10?"
-hamstervol = gets.chomp.to_i
+hamster_volume = gets.chomp.to_i
  
 puts "What's the hamster's fur color?"
-hamstercolor = gets.chomp
+hamster_color = gets.chomp
 
-puts "Is the hamster worth adopting? (y or n)"
-hamsteradopt = gets.chomp 
-hamsteradopt == "y"?  hamsteradopt ="worth" : hamsteradopt ="not worth"
+puts "Is the hamster worth adopting? (type 'y' or 'n')"
+hamster_adopt = gets.chomp.downcase	
+	case hamster_adopt
+		when "y"
+			hamster_adopt ="worth"
+		when "n"
+			hamster_adopt ="not worth"
+		else
+			hamster_adopt = "uncertain"
+		end 
 
-puts "What's the hamster's estimated age?"
-hamsterestage = gets.chomp.to_i
-hamsterestage ||= nil
+
+puts "What's the hamster's estimated age in years? (type just numbers)"
+hamster_age = gets.chomp.to_f
+	if hamster_age.zero?
+		hamster_age = nil.inspect
+	end
 
 
-puts "The Hamster's name is #{hamstername}!,\nthe volume is #{hamstervol},\nthe fur color is a beautiful #{hamstercolor},\nthe estimated age is #{hamsterestage}\nand the hamster is #{hamsteradopt} adopting."
+puts "The Hamster's name is #{hamster_name}!,\nthe volume level is #{hamster_volume},\nthe fur color is a beautiful #{hamster_color},\nthe estimated age is #{hamster_age} years\nand the hamster is #{hamster_adopt} adopting."
 
 
 #pair with @sanjaynelson
