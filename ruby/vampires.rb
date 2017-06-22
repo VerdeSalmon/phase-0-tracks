@@ -1,7 +1,7 @@
 # VAMPIRE DETECTION PROGRAM
 
 
-# ------------ FUNTIONAL CODE -------------
+# ------------ FUNCTIONAL CODE -------------
 
 def check_name(name_input)
 	name = name_input == "Drake Cula" || name_input == "Tu Fang"
