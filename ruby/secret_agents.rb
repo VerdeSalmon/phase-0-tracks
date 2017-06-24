@@ -26,3 +26,14 @@ end
 # Output = new string made with previous letter.
 
 
+def decrypt(word)
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	decrypt_word = ""
+	letter_count = 0
+	until letter_count == word.length
+		decrypt_word << alphabet[alphabet.index(word[letter_count])-1]
+		letter_count+=1
+	end
+	p decrypt_word
+
+end
