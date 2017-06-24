@@ -37,3 +37,37 @@ def decrypt(word)
 	p decrypt_word
 
 end
+
+
+def pickone(password_b, password)
+	if password_b == "encrypt"
+		encrypt(password)
+	else 
+		decrypt(password)
+	end 
+end
+
+
+
+#----------DRIVE CODE-------------
+
+
+encrypt("abc") #should return "bcd"
+encrypt("zed") #should return "afe"
+decrypt("bcd") #should return "abc"
+decrypt("afe") #should return "zed"
+
+
+#The encrypt method gave us an implicit return to pass onto the decrypt method as an argument.
+decrypt(encrypt("swordfish"))
+
+
+
+puts "Would you like to encrypt or decrypt the password?"
+password_b = gets.chomp
+
+puts "Enter your password."
+password = gets.chomp
+
+
+pickone(password_b, password)
