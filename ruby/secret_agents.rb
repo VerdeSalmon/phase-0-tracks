@@ -9,7 +9,12 @@ def encrypt(word)
 	encrypted_word = ""
 	letter_count = 0
 	until letter_count == word.length
-		encrypted_word << word[letter_count].next
+		#condition to handle edge case
+		if word[letter_count] == "z"
+			encrypted_word << "a"
+		else
+			encrypted_word << word[letter_count].next
+		end
 		letter_count+=1
 	end
 
@@ -31,7 +36,8 @@ def decrypt(word)
 	decrypt_word = ""
 	letter_count = 0
 	until letter_count == word.length
-		decrypt_word << alphabet[alphabet.index(word[letter_count])-1]
+		# % 26 to handle edge cases 
+		decrypt_word << alphabet[(alphabet.index(word[letter_count])-1) %26]
 		letter_count+=1
 	end
 	p decrypt_word
