@@ -1,99 +1,79 @@
-#Defining a method that increases each letter of the string by one.
-#def encrypt(word)
-#	#Initialized the counter outside the loop.
-#	i = 0
-#	#Iterating through each index until it matches the given word length.
-#	until i == word.length
-#		#Printing the incremented letter following each index.
-#		next_word = word[i].next 
-#		if next_word[i] == "aa"
-#			print word[i-1].next
-#		#else 
-#		#	print word[i].next
-#		end	 
-#		#Incrementing the counter by one.
-#		i += 1 
-#	#Closes the loop.	
-#	end
-##Closes the scope of the method.	
+# Method that advances every letter of a string one letter forward
+# Input= string
+# Iterate through the string and 
+#   -for each letter save the next letter in the alphabet.
+# Output = new string made with next letter.
 
 
-#Defining a method that increases each letter of the string by one.
 def encrypt(word)
-#Defining variable.
-	alphabet = "abcdefghijklmnopqrstuvwxyz"
-	#Initialized the counter outside the loop.
-	i = 0
-	words_str = ""
-	#Iterating through each index until it matches the given word length.
-	until i == word.length
-		#Printing the decrementing letter following each index.
-		words_str << alphabet[((alphabet.index(word[i]))+1) % 26]
-		#Incrementing the counter by one.
-		i += 1
-	#Closes the loop.	
+	encrypted_word = ""
+	letter_count = 0
+	until letter_count == word.length
+		#condition to handle edge case
+		if word[letter_count] == "z"
+			encrypted_word << "a"
+		else
+			encrypted_word << word[letter_count].next
+		end
+		letter_count+=1
 	end
-	words_str
-	#for i in 0..2
-#		puts i if word[i] == alphabet[i]
-#			print word[i-1]
-#	end
 
-#Closes the scope of the method.	
+	p encrypted_word
 
 end
 
-#Defining a method that decreases each letter of the string by one. 
+
+
+# Method that go back one letter of a string
+# Input = string
+# Iterate through the string and 
+# 	-for each letter save the previous letter, according to the alphabet
+# Output = new string made with previous letter.
+
+
 def decrypt(word)
-	#Defining variables.
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
-	#Initialized the counter outside the loop.
-	i = 0
-	#Iterating through each index until it matches the given word length.
-	until i == word.length
-		#Printing the decrementing letter following each index.
-		print alphabet[((alphabet.index(word[i]))-1) % 26]
-		#Incrementing the counter by one.
-		i += 1
-	#Closes the loop.	
+	decrypt_word = ""
+	letter_count = 0
+	until letter_count == word.length
+		# % 26 to handle edge cases 
+		decrypt_word << alphabet[(alphabet.index(word[letter_count])-1) %26]
+		letter_count+=1
 	end
+	p decrypt_word
 
-	#for i in 0..2
-#		puts i if word[i] == alphabet[i]
-#			print word[i-1]
-#		
-#	end
-
-#Closes the scope of the method.	
 end
 
 
 def pickone(password_b, password)
 	if password_b == "encrypt"
-		puts encrypt(password)
+		encrypt(password)
 	else 
-		puts decrypt(password)
+		decrypt(password)
 	end 
 end
 
-#DRIVER CODE.
 
-puts encrypt("abc")
-puts encrypt("zed")
-puts decrypt("bcd")
-puts decrypt("afe")
+
+#----------DRIVE CODE-------------
+
+
+encrypt("abc") #should return "bcd"
+encrypt("zed") #should return "afe"
+decrypt("bcd") #should return "abc"
+decrypt("afe") #should return "zed"
+
 
 #The encrypt method gave us an implicit return to pass onto the decrypt method as an argument.
-puts decrypt(encrypt("swordfish")) 
-
+decrypt(encrypt("swordfish"))
 
 
 
 puts "Would you like to encrypt or decrypt the password?"
-	password_b = gets.chomp
+password_b = gets.chomp
 
 puts "Enter your password."
-	password = gets.chomp
+password = gets.chomp
 
-puts pickone(password_b, password)
-	
+
+pickone(password_b, password)
