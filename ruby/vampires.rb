@@ -40,7 +40,6 @@ end
 
 
 def interview
-	puts "\nNew Employee"
 	puts "What is your name?"
 	name = check_name(gets.chomp)	
 	
@@ -87,7 +86,10 @@ end
 puts "How many employees you will be processed?"
 employees_to_process = gets.chomp.to_i
 	
-employees_to_process.times{interview}
+employees_to_process.times do|x|
+	puts "\nInterview to process number: #{x+1}"
+	interview
+end
 
 
 puts "\nActually, never mind! What do these questions have to do with anything? Let's all be friends."
