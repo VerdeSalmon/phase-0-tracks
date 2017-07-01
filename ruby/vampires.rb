@@ -1,7 +1,6 @@
 # VAMPIRE DETECTION PROGRAM
 # This program does not have error handling yet, so any typo will be interpreted as 'nil == false'
 
-
 # ------------ METHOD DECLARATION CODE -------------
 
 
@@ -92,6 +91,7 @@ end
 
 # ----------------- DRIVE CODE ------------------------
 
+puts "Please follow the instructions to introduce the answers, any typo will be interpreted as a 'false' answer, affecting employee final result"
 
 puts "How many employees you will be processed?"
 employees_to_process = gets.chomp.to_i
