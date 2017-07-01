@@ -1,61 +1,71 @@
 # VAMPIRE DETECTION PROGRAM
+# This program does not have error handling yet, so any typo will be interpreted as 'nil == false'
 
 
 # ------------ FUNCTIONAL CODE -------------
 
-def check_name(name_input)
-	name = name_input == "Drake Cula" || name_input == "Tu Fang"
+
+def valid_name?(name)
+  vampire_names = ['Drake Cula', 'Tu Fang']
+  vampire_names.include?(name)
 end
 
 
-def check_age(age_input)
+def valid_age?(age_input)
 
-		age = age_input.split(',').map(&:to_i)
+	age = age_input.split(',').map(&:to_i)
 
-		if 0 < age[0] && age[0] < 100 && (Time.new.year - 100) < age[1] && (Time.new.year - age[1]) == age[0]
-			age = true
-		else
-			age = false
-		end
+	((0 < age[0]) && (age[0] < 100) && ((Time.new.year - 100) < age[1] ) && ((Time.new.year - age[1]) == age[0]))
+	
 end
 
 
-def check_garlic(eat_garlic)
-	eat_garlic == "y"? eat_garlic =true : eat_garlic =false
+def eat_garlic?(eat_garlic)
+	eat_garlic == "y"
 end
 
 
-def check_allergy
-	allergy = ""
-	while allergy != "sunshine" && allergy != "done"
-		puts "Do you have any allergy? Please enter one allergy at the time and type 'done' when you finish."
-		allergy = gets.chomp.downcase
+def want_health_insurance?(health_insurance)	
+	health_insurance == "y"
+end
+
+
+def no_sunshine_allergy?
+	#In case the user need a list of the employee allergies
+	allergy = []
+	vampire_allergies = ["sunshine", "done"]
+		
+	while (vampire_allergies & allergy).empty?
+		puts "Allergy: "
+		allergy << gets.chomp.downcase
 	end
-end
-
-
-def check_health_insurance(health_insurance)
-	health_insurance == "y"? health_insurance =true : health_insurance =false
+	
+	allergy.delete("done")
+	(vampire_allergies & allergy).empty?
 end
 
 
 def interview
 	puts "What is your name?"
-	name = check_name(gets.chomp)	
+	name = valid_name?(gets.chomp)	
 	
-	puts "What is your age? What year were you born? (type age and year. example '34,1982'"
-	age = check_age(gets.chomp)
+	puts "What will be your age at the end of the this year? What year were you born? (type age and year. example '35,1982'"
+	age = valid_age?(gets.chomp)
+	#p age
 	
 	puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)" 
-	eat_garlic = check_garlic(gets.chomp)	
+	eat_garlic = eat_garlic?(gets.chomp)	
+	#p eat_garlic
 
 	puts "Would you like to enroll in the company’s health insurance?(y/n)"
-	health_insurance = check_health_insurance(gets.chomp)
+	health_insurance = want_health_insurance?(gets.chomp)
+	#p health_insurance
+	
+	puts "Do you have any allergy? Please enter one allergy at the time and type 'done' when you finish."
+	allergy = no_sunshine_allergy?
+	#p allergy
 
-	check_allergy
-
-
-	if !name && age && (eat_garlic||health_insurance)&& check_allergy != "sunshine" 
+	if !name && age && (eat_garlic||health_insurance)&& allergy
 		results = "Probably not a vampire."	
 	elsif !age && eat_garlic || !age && health_insurance
 		results = "Probably a vampire."
@@ -63,7 +73,7 @@ def interview
 		results = "Almost certainly a vampire."
 	elsif name
 		results = "Definitely a vampire."
-	elsif check_allergy == "sunshine"
+	elsif !allergy
 		results = "Probably a vampire."
 	else
 		results = "Results inconclusive."
