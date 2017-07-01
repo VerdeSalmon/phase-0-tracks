@@ -33,9 +33,10 @@ def no_sunshine_allergy?
 	#In case the user need a list of the employee allergies
 	allergy = []
 	vampire_allergies = ["sunshine", "done"]
+	
 		
-	while (vampire_allergies & allergy).empty?
-		puts "Allergy: "
+	while (vampire_allergies & allergy).empty? do
+		print "Allergy: "
 		allergy << gets.chomp.downcase
 	end
 	
@@ -48,7 +49,7 @@ def interview
 	puts "What is your name?"
 	name = valid_name?(gets.chomp)	
 	
-	puts "What will be your age at the end of the this year? What year were you born? (type age and year. example '35,1982'"
+	puts "What will be your age at the end of this year? What year were you born? (type age and year. example '35,1982'"
 	age = valid_age?(gets.chomp)
 	#p age
 	
@@ -93,7 +94,7 @@ end
 
 puts "Please follow the instructions to introduce the answers, any typo will be interpreted as a 'false' answer, affecting employee final result"
 
-puts "How many employees you will be processed?"
+puts "\nHow many employees do you want to process?"
 employees_to_process = gets.chomp.to_i
 	
 employees_to_process.times do|x|
