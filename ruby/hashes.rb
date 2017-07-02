@@ -1,4 +1,4 @@
-#Create a hash with empty values, that will store user input.
+#Create a data structure to store user input in a key/value pair
 client_information = {
 	#string is the incoming value data type by default in client_information hash.
 	client_name: "",
@@ -9,6 +9,9 @@ client_information = {
 	city: "",
 }
 
+def is_true?(input)
+	input == "y" 
+end
 
 
 #Driver Code
@@ -30,13 +33,7 @@ client_information[:integer][:number_of_children]= gets.chomp.to_i
 
 puts "Any Pets? (y/n)"
 #Save input in a nested hash keys.
-client_information[:boolean][:pets] = gets.chomp
-	#changing input from string to boolean.
-	if client_information[:boolean][:pets] == "y" 
-		client_information[:boolean][:pets] = true
-	else
-		client_information[:boolean][:pets] = false 
-	end
+client_information[:boolean][:pets] = is_true?(gets.chomp.downcase)
 
 
 puts "Decor Theme: "
@@ -49,13 +46,7 @@ client_information[:city] = gets.chomp
 
 puts "the area to design is Interior? (y/n)"
 #Save input in a nested hash keys.
-client_information[:boolean][:design_area] = gets.chomp
-	#changing input from string to boolean.
-	if client_information[:boolean][:design_area] == "y" 
-		client_information[:boolean][:design_area] = true
-	else
-		client_information[:boolean][:design_area] = false 
-	end
+client_information[:boolean][:design_area] = is_true?(gets.chomp.downcase)
 
 
 #Print the hash with the user input.
@@ -63,8 +54,7 @@ puts client_information
 
 
 #To get any key of the hash client_information or none.
-puts "Do you want to make some changes? (Reply none or type the name of the field)"
-#Save the input.
+puts "Do you want to make some changes? (Type 'none' or type the name of the field)"
 changes = gets.chomp
 #End the program if the user input is "none".
 	if changes == "none"
@@ -94,7 +84,7 @@ changes = gets.chomp
 
 		#If the key that the user wants to be change, isn't in the nested hashes, look in the rest of the keys hashes.
 		else 
-			#save the input in the found key, with any data type convertion.
+			#Save the input in the found key, with any data type convertion.
 			client_information[changes.to_sym] = changes2
 		end
 
