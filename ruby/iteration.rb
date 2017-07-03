@@ -1,3 +1,4 @@
+# Use yield
 def drinks
 	puts "Margarita"
 	2.times {yield}
@@ -17,6 +18,24 @@ end
 beers{ |name1| puts "I like #{name1}"}
 beers{ |name1| puts "I love #{name1}"}
 
+
+# Use Proc
+favorite_beer = Proc.new do |beer_name|
+	puts "I like #{beer_name}"
+end
+
+favorite_beer.call 'Cream Ale'
+
+
+def beers(beer)
+	puts "India Pale Ale"
+	beer.call "Peanut butter stout"
+	beer.call "Juniper Saison"
+	puts " "
+end
+
+
+beers(favorite_beer)
 
 
 #Release 1
