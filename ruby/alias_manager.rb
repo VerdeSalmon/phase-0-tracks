@@ -50,8 +50,7 @@ name = ""
 #Create a loop that kep asking names and break when the user type quit
 until name == "quit"
 	#Prompt for user input
-	puts "Type a name to get an alias"
-	#Save user input
+	puts "Type a name to get an alias and type 'quit' when you'r done"
 	name = gets.chomp
 	#Condition to change every input, less "quit" input
 	if name != "quit"
@@ -64,6 +63,6 @@ end
 
 #Call the hash and print every key-value pair with a user friendly message
 names_and_alias.each do |name, alias_name|
-		p "#{name} is also known as #{alias_name}"
-	end
+	p "#{name} is also known as #{alias_name}"
+end
 
