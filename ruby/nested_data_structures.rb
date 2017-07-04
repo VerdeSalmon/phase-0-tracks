@@ -12,23 +12,46 @@ kitchen = [
 	]
 ]
 
-p kitchen
 
-puts "How many pans do you have?"
+def print_inventory_list(input_inventory_list)
+
+	inventory_list = input_inventory_list.flatten
+	puts "Inventory"
+	inventory_list.each do |item|
+		if item.is_a? Hash # kitchen[3][0][:cabinet1] or :cabinete2
+			item.each do |sub_subcategory, item2|
+				if item2.is_a? Hash # kitchen[3][0][:cabinet1][:flatware],[:pots] and [:pans]
+					item2.each do |sub_sub_subcategory, item3|
+						puts "+ #{sub_subcategory}: #{sub_sub_subcategory.to_s}: #{item3}"
+					end
+				else
+					puts "+ #{sub_subcategory.to_s}: #{item2}"
+				end
+			end
+		else
+			puts "+ #{item}"
+		end
+	end
+end
+
+print_inventory_list(kitchen)
+
+
+
+puts "\nHow many pans do you have?"
 kitchen[3][0][:cabinet1][:pans] = gets.chomp
 
-
-puts "Do you want to add any element inside of a cabinet? (Type cabinet1, cabinet2)"
+puts "\nDo you want to add any element inside of a cabinet? (To choose a cabinet, please type 'cabinet1' or 'cabinet2')"
 add_place = gets.chomp.to_sym
 
-puts "Which element do you will like to add at #{add_place}?"
+puts "\nWhich element do you will like to add at #{add_place}?"
 add_element = gets.chomp
 
 
 if kitchen[3][0].key? add_place
 
 	if add_place == :cabinet1
-		puts "Do you want save it as a flatware, pots or pans?"
+		puts "\nDo you want save it as a flatware, pots or pans?"
 		cabinet1_category = gets.chomp.to_sym
 
 		if cabinet1_category == :flatware
@@ -55,6 +78,8 @@ if kitchen[3][0].key? add_place
 end
 
 
-kitchen[3][1].delete_at(1)
+deleted = kitchen[3][1].delete_at(1)
 
-p kitchen 
+puts "\nUpdated Inventory".upcase
+print_inventory_list(kitchen) 
+puts "\nCHANGES: #{deleted.capitalize} is been deleted and #{add_element.capitalize} is been added to #{add_place.capitalize}"
