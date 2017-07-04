@@ -45,9 +45,9 @@ end
 p fibo(4)
 
 
-#Release 2
+# Release 2
 
-#Pseudocode of Sorting Method
+# Pseudocode of Sorting Method
 
 
 #-Define a method that takes as a parameter an array
@@ -61,19 +61,19 @@ p fibo(4)
 	#-The method returns a sorted copy of the given argument 
 #  
 
-def insertion_sort(arr)
-  for i in (1...(arr.size))
-    if arr[i-1] > arr[i]
-      i.downto(1) do |el|
-        if arr[el] < arr[el-1]
-          arr[el-1], arr[el] = arr[el], arr[el-1]
+def insertion_sort(list)
+  list.length.times do |item|
+    if list[item-1] > list[item]
+      item.downto(1) do |x|
+        if list[x] < list[x-1]
+          list[x-1], list[x] = list[x], list[x-1]
         end
       end
     end
   end
-  arr
+  list
 end
 
-arr = [5, 2, 4, 6, 1, 3]
+number_list = [5, 2, 4, 6, 1, 3]
 
-p insertion_sort(arr)
+p insertion_sort(number_list)
