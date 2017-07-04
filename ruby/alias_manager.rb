@@ -1,13 +1,12 @@
 
 #Method to swap the first and last name.
 def name_swap(name)
-#Split the string by word and make an array
-name_split = name.split(" ")
-#swap the elements in the array
-name_swap = name_split.reverse
-#Make one string, joining the elements in the array
-name_join = name_swap.join(" ")
-
+	#Split the string by word and make an array
+	name_split = name.split(" ")
+	#Swap the elements in the array
+	name_swap = name_split.reverse
+	#Make one string, joining the elements in the array
+	name_join = name_swap.join(" ")
 end
 
 #Method to change the vowels for the next vowel and the consonants for the next consonant in the alphabet
