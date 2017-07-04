@@ -47,19 +47,19 @@ p fibo(4)
 
 # Release 2
 
-# Pseudocode of Sorting Method
+# Pseudocode of Insertion Sorting Method
 
 
-#-Define a method that takes as a parameter an array
-  #-Do a loop for each element of the parameter, starting in the second element ending with the last element of parameter.
-      #-Do a condition that if the last element of the parameter is bigger than other element of the parameter do: 
-    	#-Count down one position and
-    	#-if the element is smaller than the one at it's left position, then
-				#-switch position 
-	#-The loop end when check the last number and this is bigger than the one at it's left position.
+# Define a method that takes as a parameter a list of elements 
+  # Iterate through the list, starting in the second element ending with the last element.
+      # Do conditional statement If the previous element of the list is bigger than the current element of the list:
+    	 # Countdown one position and
+        # If the element is smaller than the one at it's left position, then
+				  # Switch position 
+	# Iteration end when check the last number and this is bigger than the one at it's left position.
 
-	#-The method returns a sorted copy of the given argument 
-#  
+	# The method returns a sorted copy of the given list
+
 
 def insertion_sort(list)
   list.length.times do |item|
