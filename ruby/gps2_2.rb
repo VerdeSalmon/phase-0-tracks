@@ -43,24 +43,25 @@
   # no output
 
 # Release 1
+
+DEFAULT_QUANTITY = 0
+
 def create_list(items)
   key_item_list= items.split(" ")
   item_list = {}
   key_item_list.each do |key|
-    item_list[key] = 0
+    item_list[key] = DEFAULT_QUANTITY
   end 
   print_list(item_list)
   item_list
 end
 
-def add_item(list, item, quantity = 0)
+def add_item(list, item, quantity = DEFAULT_QUANTITY)
   list[item] = quantity
-  #list
 end
 
 def remove_item(list, item)
   list.delete(item)
-  #list
 end
 
 def update_quantity(list, item, quantity)
