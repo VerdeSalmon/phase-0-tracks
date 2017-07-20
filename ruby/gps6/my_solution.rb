@@ -50,16 +50,16 @@ class VirusPredictor
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
+    speed = if @population_density >= 200
+      0.5
     elsif @population_density >= 150
-      speed += 1
+      1
     elsif @population_density >= 100
-      speed += 1.5
+      1.5
     elsif @population_density >= 50
-      speed += 2
+      2
     else
-      speed += 2.5
+      2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
