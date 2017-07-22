@@ -96,5 +96,12 @@ function randomListMaker(number){
   return randomWordList;
 }
 
-
 console.log(randomListMaker(4))
+
+
+for (var i = 0; i <= 10; i++){
+  var randomWordList2 = randomListMaker(3);
+  console.log(randomWordList2);
+  console.log(longestWordFinder(randomWordList2));
+  console.log("----------------------")
+}
