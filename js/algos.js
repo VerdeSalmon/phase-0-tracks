@@ -83,4 +83,18 @@ console.log("----------------------")
   // Output: a random words list of 'number' lenght
 
 
-   
+function randomListMaker(number){
+  var randomWordList = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  while (randomWordList.length < number){
+    var randomWord = "";
+    for( var i=0; i < ((Math.random() * 10)+1); i++ ){
+        (randomWord += alphabet.charAt(Math.floor(Math.random() * alphabet.length)));  
+    }
+    randomWordList.push(randomWord);
+  }
+  return randomWordList;
+}
+
+
+console.log(randomListMaker(4))
