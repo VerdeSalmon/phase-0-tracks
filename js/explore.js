@@ -17,6 +17,17 @@ function reverse(word){
 
 console.log(reverse("hola"));
 
-var myReverseWord = (reverse("hello"));
+var myReverseWord = []
+myReverseWord.push(reverse("hello"));
+myReverseWord.push(reverse("apple"));
+myReverseWord.push(reverse("sun"));
+myReverseWord.push(reverse("banana"));
 
-console.log(myReverseWord);
+console.log(myReverseWord); 
+
+
+var anotherReverseWord = reverse("sun")
+
+if (anotherReverseWord.length > 3){
+ console.log(anotherReverseWord); 
+}
