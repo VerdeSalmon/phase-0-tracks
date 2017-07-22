@@ -71,3 +71,16 @@ console.log(hasEqualProperty(garden, jungle));
 
 console.log("----------------------")
 
+
+// Release 2: Generate Random Test Data
+
+// Create a function that take a number and build a list of that length with random words
+  // Input: a number
+  // Steps:
+   // Declare a list object
+   // Loop for number times 
+      // To create random words, with different lenghts, within a range of 1 to 10  
+  // Output: a random words list of 'number' lenght
+
+
+   
