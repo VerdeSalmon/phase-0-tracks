@@ -14,12 +14,12 @@ function horseMaker(horseName, horseColor){
 	for (var i = 0; i < horseName.length; i++){
 		horsesMatcher[horseName[i]] = horseColor[i];
 	}
-	return horsesMatcher
+	return horsesMatcher;
 }
 
-console.log(horseMaker(horseName,horseColor))
+console.log(horseMaker(horseName,horseColor));
 
-console.log("----")
+console.log("----");
 
 
 // Release 2: Build Many Objects Using a Constructor
@@ -42,7 +42,7 @@ console.log(car1);
 car1.honk();
 
 
-console.log("----")
+console.log("----");
 
 
 var car2 = new Car(1999, "tooth white", false);
@@ -50,7 +50,7 @@ car2.honk();
 console.log(car2);
 
 
-console.log("----")
+console.log("----");
 
 
 var car3 = new Car(2020, "silver hope", false);
