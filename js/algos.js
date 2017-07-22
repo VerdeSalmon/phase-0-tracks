@@ -39,6 +39,35 @@ console.log("----------------------")
   // Output: true or false  
 
 
+function hasEqualProperty(listOne, listTwo){
+  for (var i in listOne){
+    for (var j in listTwo){
+      if (listOne[i] == listTwo[j]){
+        var sharedKeyValue = true;
+      }else{
+        sharedKeyValue = false;
+      }
+    }
+  }
+  return sharedKeyValue;
+}
 
 
+var house = {rooms: 5, location: "Main city"};
+
+var office = {rooms: 15, location: "Main city"};
+
+console.log(hasEqualProperty(house, office));
+
+//------------
+
+var garden = {plants:  300, trees: 2};
+
+var jungle = {animals: 300, trees: 1 };
+
+console.log(hasEqualProperty(garden, jungle));
+
+//--------------
+
+console.log("----------------------")
 
