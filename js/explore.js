@@ -1,27 +1,33 @@
 // Create an object that takes a word or phrase an reverse it
+// Input: a word
+// Steps:
+  // Iterate trhough the word
+  // Countdown by index
+// Output: reversed word 
+
 
 function reverse(word){
-	// Create an array to return the reverse string
-	var reverseString = [];
-	// Iterate trhough the word
-	for (var i = 0; i < word.length; i++) {
-	// Return each letter of the word, put on top last letter returned
-	reverseString.unshift(word[i]);
-	} 
-	//Return the reverse string
-	return reverseString.join("");
+  var reverseWord = []
+  for (var i = word.length-1; i >=0; i--){
+    reverseWord +=word[i];
+  }
+  return reverseWord;
 }
 
 
-//Call the object, give a string as an argument and store the result of the function in a variable
-var reverseWord = reverse("yellow chicken baby");
+console.log(reverse("hola"));
+
+var myReverseWord = []
+myReverseWord.push(reverse("hello"));
+myReverseWord.push(reverse("apple"));
+myReverseWord.push(reverse("sun"));
+myReverseWord.push(reverse("banana"));
+
+console.log(myReverseWord); 
 
 
-//Print the variable when a condition become true
-if (reverseWord.length > 5){
-	console.log(reverseWord);
+var anotherReverseWord = reverse("sun")
+
+if (anotherReverseWord.length > 3){
+ console.log(anotherReverseWord); 
 }
-
-
-
-
