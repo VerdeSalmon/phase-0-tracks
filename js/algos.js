@@ -8,6 +8,19 @@
   // Output: the longest word or phrase of the list
 
   
-function longestWord(wordList){
-
+function longestWordFinder(wordList){
+  var longestWord = ""
+  for (var i = 0; i < wordList.length; i++){
+    if (wordList[i].length > longestWord.length){
+      longestWord = wordList[i] 
+    }
+  }
+  return longestWord; 
 }
+
+var wordList = ["car", "face", "monday"];
+var phraseList = ["banana dos", "orange three", "banana five"];
+
+console.log(longestWordFinder(wordList));
+console.log(longestWordFinder(phraseList));
+
