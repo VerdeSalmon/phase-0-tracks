@@ -1,0 +1,79 @@
+1. Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM houses;
+1|Austin|2810 Pearl st|150000|true|3
+2|San Francisco|2010 Mission st|1500000|false|2
+3|Colorado|3450 Chavez st|170000|true|1
+4|Salem|1790 Independence st|350000|true|2
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE houses SET on_sale="false" WHERE city="Salem";
+sqlite> SELECT * FROM houses;
+1|Austin|2810 Pearl st|150000|true|3
+2|San Francisco|2010 Mission st|1500000|false|2
+3|Colorado|3450 Chavez st|170000|true|1
+4|Salem|1790 Independence st|350000|false|2
+
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM owners, houses WHERE houses.owner_id = owners.id;
+3|Jones Katharine|7984531264|1|Austin|2810 Pearl st|150000|true|3
+2|Kennet Jane|7895673456|2|San Francisco|2010 Mission st|1500000|false|2
+1|Morril Jack|5892351234|3|Colorado|3450 Chavez st|170000|true|1
+2|Kennet Jane|7895673456|4|Salem|1790 Independence st|350000|false|2
+
+--------
+
+sqlite> SELECT * FROM owners JOIN houses ON houses.owner_id = owners.id;
+3|Jones Katharine|7984531264|1|Austin|2810 Pearl st|150000|true|3
+2|Kennet Jane|7895673456|2|San Francisco|2010 Mission st|1500000|false|2
+1|Morril Jack|5892351234|3|Colorado|3450 Chavez st|170000|true|1
+2|Kennet Jane|7895673456|4|Salem|1790 Independence st|350000|false|2
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT owners.name, houses.city, houses.market_value FROM owners JOIN houses ON houses.owner_id = owners.id;
+Jones Katharine|Austin|150000
+Kennet Jane|San Francisco|1500000
+Morril Jack|Colorado|170000
+Kennet Jane|Salem|350000
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM houses WHERE on_sale="false";
+sqlite> SELECT * FROM houses;
+1|Austin|2810 Pearl st|150000|true|3
+3|Colorado|3450 Chavez st|170000|true|1
+
+
+JOINS 
+Different kinds of joins
+
+qlite> SELECT owners.name, houses.city, houses.market_value FROM owners INNER JOIN houses ON houses.owner_id = owners.id;
+Jones Katharine|Austin|150000
+Morril Jack|Colorado|170000
+
+sqlite> SELECT owners.name, houses.city, houses.market_value FROM owners LEFT JOIN houses ON houses.owner_id = owners.id;
+Morril Jack|Colorado|170000
+Kennet Jane||
+Jones Katharine|Austin|150000
+
+sqlite> SELECT owners.name, houses.city, houses.market_value FROM owners RIGHT JOIN houses ON houses.owner_id = owners.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+sqlite> SELECT owners.name, houses.city, houses.market_value FROM owners FULL JOIN houses ON houses.owner_id = owners.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+
+
+
+
+
+
+
