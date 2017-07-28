@@ -17,6 +17,12 @@ def create_recipe(recipes_db, recipe_name, has_nuts)
   recipes_db.execute("INSERT INTO recipe_list (recipe_name, has_nuts) VALUES (?, ?)", [recipe_name, has_nuts])
 end  
 
+def print_table(recipes_db)
+  recipes_db.execute("SELECT * FROM recipe_list").each  do |recipe|
+    puts "#{recipe['recipe_name']} has nuts #{recipe['has_nuts']}"
+  end
+end
+
 def boolean_maker(input)
   if input == "y"
      "true"
@@ -27,7 +33,9 @@ def boolean_maker(input)
   end
 end
 
-
+def check_recipe(recipes_db, recipe_name)
+   recipes_db.execute("SELECT * FROM recipe_list WHERE recipe_name = ?", [recipe_name])
+end
 
 #------------- DRIVER CODE ---------------
 
@@ -40,3 +48,11 @@ puts "That recipe has nuts? (Type 'y' or 'n'"
 has_nuts = boolean_maker(gets.chomp.downcase)
 
 create_recipe(recipes_db, recipe_name, has_nuts)
+print_table(recipes_db)
+
+puts "what recipe you will like to check"
+output = check_recipe(recipes_db, gets.chomp.capitalize)
+
+output.each do |recipe|
+  puts "#{recipe['recipe_name']} has nuts #{recipe['has_nuts']}"
+end
